@@ -43,6 +43,8 @@ jobs:
         run: |
           npm ci
           npm i wait-on
+      - name: Wait for MongoDB
+        run: npx wait-on tcp:mongodb:27017
       - name: Run server
         run: npm start & npx wait-on http://${{ env.HOST }}:${{ env.PORT }}
       - name: Run tests
