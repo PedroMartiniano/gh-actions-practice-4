@@ -22,7 +22,7 @@ jobs:
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: example
       PORT: 8080
-      HOST: 0.0.0.0
+      HOST: 127.0.0.1
     services:
       mongodb:
         image: mongo
