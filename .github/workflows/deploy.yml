@@ -46,7 +46,9 @@ jobs:
       - name: Wait for MongoDB
         run: npx wait-on tcp:mongodb:27017
       - name: Run server
-        run: npm start & npx wait-on http://${{ env.HOST }}:${{ env.PORT }}
+        run: npm start
+      - name: Wait for server
+        run: npx wait-on http://${{ env.HOST }}:${{ env.PORT }}
       - name: Run tests
         run: npm test
       - name: Output information
